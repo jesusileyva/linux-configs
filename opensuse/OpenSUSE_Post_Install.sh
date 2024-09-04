@@ -5,6 +5,9 @@ echo "--- OpenSUSE Installation Script ---"
 # ---- ADD REPOSITORIES ---- #
 
 echo "[ INFORMATION ] Adding Repository: Microsoft"
+# Add fish term repository
+sudo zypper --gpg-auto-import-keys addrepo --refresh 'https://download.opensuse.org/repositories/shells:fish:release:3/openSUSE_Tumbleweed/shells:fish:release:3.repo'
+
 # Add Microsoft Repositories
 sudo rpm --import 'https://packages.microsoft.com/keys/microsoft.asc'
 sudo zypper --gpg-auto-import-keys addrepo --refresh 'https://packages.microsoft.com/yumrepos/edge' 'Microsoft Edge'
@@ -23,7 +26,7 @@ sudo zypper --gpg-auto-import-keys addrepo --refresh 'https://download.videolan.
 
 #echo "[ INFORMATION ] Adding Repository: Packman"
 # Add OpenSUSE Packman repository
-#sudo zypper --gpg-auto-import-keys addrepo --refresh 'https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed/' 'Packman'
+sudo zypper --gpg-auto-import-keys addrepo --refresh 'https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed/' 'Packman'
 
 echo "[ INFORMATION ] Refreshing Repositories; Importing GPG Keys..."
 sudo zypper --gpg-auto-import-keys refresh
@@ -34,7 +37,7 @@ sudo zypper install -y ffmpeg gstreamer-plugins-{good,bad,ugly,libav} libavcodec
 
 # NOTE: Not using opi here since it will switch ALL packages that exist in the Packman repository to use Packman.
 # We manually specify to install codecs from Packman repository so all other programs are not switched to Packman.
-# sudo zypper install -y --allow-vendor-change --from Packman ffmpeg gstreamer-plugins-{good,bad,ugly,libav} libavcodec vlc-codecs
+sudo zypper install -y --allow-vendor-change --from Packman ffmpeg gstreamer-plugins-{good,bad,ugly,libav} libavcodec vlc-codecs
 # Disable Packman repository
 #
 # NOTE
@@ -78,6 +81,12 @@ sudo zypper dup -y --from VLC --allow-vendor-change
 echo "[  ATTENTION  ] Installing: EasyEffects Presets"
 # Install EasyEffects presets
 echo 1 | bash -c "$(curl -fsSL https://raw.githubusercontent.com/JackHack96/PulseEffects-Presets/master/install.sh)"
+
+echo "[  ATTENTION  ] Installing: Fish Terminal"
+#install Fish terminal
+sudo zypper install -y fish
+
+
 
 # ---- CLEANUP ---- #
 
