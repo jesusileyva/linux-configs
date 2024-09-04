@@ -56,7 +56,7 @@ sudo zypper dup -y
 
 echo "[  ATTENTION  ] Installing: KDE Utilities"
 # --- Install KDE Utilities --- #
-sudo zypper install -y kdeconnect-kde krita kdenlive partitionmanager kvantum-manager
+sudo zypper install -y kdeconnect-kde krita partitionmanager kvantum-manager
 
 echo "[  ATTENTION  ] Installing: Discord"
 # --- Install Discord IM --- #
@@ -72,15 +72,15 @@ sudo zypper install -y github-desktop git
 
 echo "[  ATTENTION  ] Installing: System Utilities"
 # --- Install System Level Utilities --- #
-sudo zypper install -y fde-tools bleachbit easyeffects libdbusmenu-glib4 MozillaThunderbird p11-kit-server btop bat fastfetch fzf tealdeer lsd qbittorrent
+sudo zypper install -y fde-tools bleachbit libdbusmenu-glib4 btop bat fastfetch fzf tealdeer lsd qbittorrent
 
 echo "[  ATTENTION  ] Installing: VLC"
 # --- Install VLC from VideoLAN Repositories --- #
 sudo zypper dup -y --from VLC --allow-vendor-change
 
-echo "[  ATTENTION  ] Installing: EasyEffects Presets"
+# echo "[  ATTENTION  ] Installing: EasyEffects Presets"
 # Install EasyEffects presets
-echo 1 | bash -c "$(curl -fsSL https://raw.githubusercontent.com/JackHack96/PulseEffects-Presets/master/install.sh)"
+# echo 1 | bash -c "$(curl -fsSL https://raw.githubusercontent.com/JackHack96/PulseEffects-Presets/master/install.sh)"
 
 echo "[  ATTENTION  ] Installing: Fish Terminal"
 #install Fish terminal
