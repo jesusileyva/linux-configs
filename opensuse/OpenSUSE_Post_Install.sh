@@ -72,7 +72,7 @@ sudo zypper install -y github-desktop git
 
 echo "[  ATTENTION  ] Installing: System Utilities"
 # --- Install System Level Utilities --- #
-sudo zypper install -y fde-tools bleachbit easyeffects libdbusmenu-glib4 MozillaThunderbird p11-kit-server
+sudo zypper install -y fde-tools bleachbit easyeffects libdbusmenu-glib4 MozillaThunderbird p11-kit-server btop bat fastfetch fzf tealdeer lsd qbittorrent
 
 echo "[  ATTENTION  ] Installing: VLC"
 # --- Install VLC from VideoLAN Repositories --- #
